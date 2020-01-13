@@ -1,5 +1,6 @@
 package com.tuesdaylab.todo.controller;
 
+import com.tuesdaylab.todo.config.advice.ExceptionAdvice;
 import com.tuesdaylab.todo.dto.TodoDTO;
 import com.tuesdaylab.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ public class ApiController {
     @GetMapping
     public List<TodoDTO> getTodos() {
         return this.todoService.getTodos();
+//        throw new ExceptionAdvice.CustomException("raise exception!");
     }
 
     @GetMapping(value = "{todoId}")
